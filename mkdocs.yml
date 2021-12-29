@@ -1,4 +1,3 @@
-mkdocs gh-deploy --force
 theme:
   name: material
 site_name: My Docs
