@@ -1,0 +1,84 @@
+<style>
+    input::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 9999px;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: #3b82f6;
+        opacity: 0;
+        transition-property: opacity;
+    }
+    input:checked {
+        background-color: #ec4899;
+        border-color: #ec4899;
+    }
+    input:checked::before {
+        background-color: #5e48ec;
+    }
+    input:hover:before {
+        opacity: 0.1;
+    }
+    input:checked + div {
+        opacity: 1;
+    }
+</style>
+
+<div style="display: inline-flex; align-items: center">
+    <label
+        style="display: flex; position: relative; padding: 0.75rem; align-items: center; border-radius: 9999px; cursor: pointer"
+        for="checkbox"
+        data-ripple-dark="true"
+    >
+        <input
+            type="checkbox"
+            id="checkbox"
+            style="
+                position: relative;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+                width: 1.25rem;
+                height: 1.25rem;
+                border-radius: 0.375rem;
+                border-width: 1px;
+                appearance: none;
+                cursor: pointer;
+            "
+            checked
+        />
+        <div
+            style="
+                position: absolute;
+                transition-property: opacity;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                color: #ffffff;
+                pointer-events: none;
+                opacity: 0;
+            "
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                style="height: 0.875rem; width: 0.875rem"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="1"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+        </div>
+    </label>
+</div>
